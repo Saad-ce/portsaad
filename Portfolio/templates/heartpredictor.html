@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% block content%}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Predictor</title>
+</head>
+<body>
+
+<h3>Predict chances of heart Disease in your future</h3>
+</br>
+<div class="container">
+
+
+<form action="{% url 'resultheart'%}" method="get" class='form-horizontal'>
+    {% csrf_token%}
+  <label >Name:</label>
+  <input type="text" class="form-control" required name="Name"><br><br>
+  <label >age:</label>
+  <input type="text" class="form-control" required name="age"><br><br>
+    <label >sex:</label>
+  <input type="text" class="form-control" required name="sex" placeholder="Gender Male=1, Female =0"><br><br>
+    <label >cp:</label>
+  <input type="text" class="form-control"  required name="cp" placeholder="Constrictive pericarditis "><br><br>
+    <label >trestbps:</label>
+  <input type="text" class="form-control" required name="trestbps" placeholder=" resting blood pressure "><br><br>
+    <label >chol:</label>
+  <input type="text" class="form-control" required name="chol" placeholder="cholesterol "><br><br>
+
+  <label >fbs:</label>
+  <input type="text" class="form-control" required name="fbs" placeholder="fasting blood sugar"><br><br>
+    <label >restecg:</label>
+  <input type="text"  class="form-control" required name="restecg" placeholder="resting electrocardiographic"><br><br>
+    <label >thalach:</label>
+  <input type="text" class="form-control" required name="thalach" placeholder="maximum heart rate achieved"><br><br>
+    <label >exang:</label>
+
+  <input type="text" class="form-control" required name="exang" placeholder="Exercise induced angina"><br><br>
+     <label >oldpeak:</label>
+  <input type="text" class="form-control" required name="oldpeak" placeholder="exercise relative to rest"><br><br>
+
+     <label >slope:</label>
+
+  <input type="text" class="form-control" class="form-control" required name="slope" placeholder="segment shift relative to exercise-induced increments "><br><br>
+    <label >ca:</label>
+  <input type="text" class="form-control" required name="ca" placeholder="coronary calcium scan"><br><br>
+    <label >thal:</label>
+  <input type="text" class="form-control" required name="thal" placeholder="Thalassemia "><br><br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+{% endblock %}
+</body>
+
+</html>
